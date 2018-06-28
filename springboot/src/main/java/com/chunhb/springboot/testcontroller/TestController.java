@@ -13,6 +13,8 @@ public class TestController {
 
     @GetMapping(value = "testJson")
     public String testJson(){
+
         return "json";
     }
+
 }
