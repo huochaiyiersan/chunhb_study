@@ -20,6 +20,7 @@ public class TestController {
 
         logger.info("info","atestjson_info");
         logger.error("error","atestjson_error");
+        
         return "json";
     }
 
