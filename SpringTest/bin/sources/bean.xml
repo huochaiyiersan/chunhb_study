@@ -5,9 +5,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="helloWorld" class="hui.study.model.Student">
+    <bean id="student" class="hui.study.model.Student">
         <!-- 基于设值注入的初始化方法 -->
         <property name="stuName" value="Hello World!"/>
+    </bean>
+    
+    
+    <!-- 配置School类，注入一个学生类 -->
+    
+    <bean id="school" class ="hui.study.model.School">
+    	<property name="schname" value="this.is school"></property>
+    	<property name="s_student" ref="student"></property>
+    	
     </bean>
 
 </beans>
