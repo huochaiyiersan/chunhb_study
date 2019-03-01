@@ -1,5 +1,7 @@
 package hui.study.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * 采用在xml中配置注入一个学生类
  * @author chunhb
@@ -7,6 +9,7 @@ package hui.study.model;
  */
 public class School {
 	private String schname;
+	@Autowired
 	private Student s_student;
 
 
