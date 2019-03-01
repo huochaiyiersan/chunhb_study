@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class School {
 	private String schname;
-	@Autowired
+	
 	private Student s_student;
 
 
@@ -22,6 +22,7 @@ public class School {
 	public Student getS_student() {
 		return s_student;
 	}
+	@Autowired
 	public void setS_student(Student s_student) {
 		this.s_student = s_student;
 	}
