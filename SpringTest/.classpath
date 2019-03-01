@@ -7,6 +7,7 @@
 	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjweaver.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>

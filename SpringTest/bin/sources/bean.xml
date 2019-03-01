@@ -3,10 +3,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context      
-   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
    <!--  <bean id="student" class="hui.study.model.Student">
         基于设值注入的初始化方法
@@ -21,6 +24,26 @@
     	<property name="s_student" ref="student"></property>
     	
     </bean> -->
+    
+    <bean id="servicetest" class = "hui.study.aoptest.service.ServiceTest"></bean>
+    
+    <bean id="logtest" class = "hui.study.aoptest.Logtest"></bean>
+    
+    
+    <aop:config>
+    <!-- hui.study.aoptest.service.ServiceTest.*(..)  指的是该类中的所有的方法和所有的参数 -->
+    	<aop:pointcut id="st" expression="execution(* hui.study.aoptest.service.ServiceTest.*(..))" />
+    	<aop:aspect id="asp_logtest" ref="logtest">
+    	<!-- 执行前执行 -->
+    		<aop:before method="before" pointcut-ref="st"/>
+    		<!-- 执行后执行 -->
+    		<aop:after method="after" pointcut-ref="st"/>
+    		<!-- 执行前和后执行执行 -->
+    		<aop:around method="log" pointcut-ref="st"/>
+    	</aop:aspect>
+    	
+    </aop:config>
+ 
 <!-- <context:annotation-config></context:annotation-config>  -->
 
 

@@ -3,6 +3,7 @@ package hui.study.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import hui.study.aoptest.service.ServiceTest;
 import hui.study.model.School;
 import hui.study.model.Student;
 
@@ -30,5 +31,10 @@ public class SpringMain {
         System.out.println("学校类："+school.getSchname()+"学生类："+school.getS_student().getStuName());
 
 
+        ServiceTest sertest = (ServiceTest)context.getBean("servicetest");
+        
+        sertest.testser();
+        
+        
     }}
 }
