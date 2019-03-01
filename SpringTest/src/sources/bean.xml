@@ -8,20 +8,22 @@
        http://www.springframework.org/schema/context      
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="student" class="hui.study.model.Student">
-        <!-- 基于设值注入的初始化方法 -->
+   <!--  <bean id="student" class="hui.study.model.Student">
+        基于设值注入的初始化方法
         <property name="stuName" value="Hello World!"/>
     </bean>
     
     
-    <!-- 配置School类，注入一个学生类 -->
+    配置School类，注入一个学生类
     
     <bean id="school" class ="hui.study.model.School">
     	<property name="schname" value="this.is school"></property>
-    	<!-- <property name="s_student" ref="student"></property> -->
+    	<property name="s_student" ref="student"></property>
     	
-    </bean>
-    
-<context:annotation-config></context:annotation-config>
+    </bean> -->
+<!-- <context:annotation-config></context:annotation-config>  -->
+
+
+<context:component-scan base-package="hui.study.model"/>
 
 </beans>

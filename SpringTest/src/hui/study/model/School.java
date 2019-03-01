@@ -3,15 +3,19 @@ package hui.study.model;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 采用在xml中配置注入一个学生类
  * @author chunhb
  *
  */
+
+@Component(value="school")
 public class School {
-	private String schname;
-	@Resource(name="student")
+	private String schname="SCHOOL";
+
+	@Autowired
 	private Student s_student;
 
 
