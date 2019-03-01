@@ -1,5 +1,7 @@
 package hui.study.model;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -9,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class School {
 	private String schname;
-	
+	@Resource(name="student")
 	private Student s_student;
 
 
@@ -22,7 +24,7 @@ public class School {
 	public Student getS_student() {
 		return s_student;
 	}
-	@Autowired
+	
 	public void setS_student(Student s_student) {
 		this.s_student = s_student;
 	}
